@@ -1,0 +1,30 @@
+@startuml jadwal
+actor Admin 
+actor Mahasiswa
+
+usecase "Login admin" as UC1
+usecase "Login mahasiswa" as UC2
+usecase "Akses manajemen jadwal" as UC3
+usecase "Tambah jadwal" as UC4
+usecase "Edit jadwal" as UC5
+usecase "Hapus jadwal" as UC6
+usecase "Akses tampilan jadwal" as UC7
+usecase "Tampilkan Detail Jadwal" as UC8
+usecase "Logout" as UC9
+
+Admin --> UC1
+Admin --> UC3
+Admin --> UC4
+Admin --> UC5
+Admin --> UC6
+Admin --> UC9 
+
+Mahasiswa --> UC2
+Mahasiswa --> UC7
+Mahasiswa --> UC8
+Mahasiswa --> UC9
+
+UC1 --> UC9 : After succesfull login
+UC2 --> UC9 : After succesfull login
+
+@enduml

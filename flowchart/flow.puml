@@ -1,0 +1,41 @@
+@startuml jadwal
+title Simplified Flowchart for Class Scheduling Application
+
+start
+
+:Open Application;
+
+if (Login Required?) then (Yes)
+    :Login;
+    if (User Type) then (Admin)
+        :Go to Schedule Management;
+        
+        if (Choose Action) then (Add)
+            :Enter Schedule Details;
+            :Save Schedule;
+        else if (Edit)
+            :Select Schedule to Edit;
+            :Update and Save Changes;
+        else if (Delete)
+            :Select Schedule to Delete;
+            :Confirm Deletion;
+        endif
+        
+        :Logout;
+
+    else (Student)
+        :View Weekly Schedule;
+        :Display Details (Date, Time, Duration, Course, Lecturer, Location);
+
+       
+
+        :Close Schedule View;
+    endif
+
+else (No)
+    :Display Error Message;
+    :Redirect to Login;
+endif
+
+stop
+@enduml
